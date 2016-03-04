@@ -13,7 +13,12 @@ import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.EjbTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.FreemarkerTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.JettyTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.NettyTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.QuartzTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.ServletlistenerTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.SqlTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.SshTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.StringtemplateTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.WebsocketTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.XmlrpcTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.XmppTest;
 import com.kone.cth.GwtTestEapFuse.shared.FieldVerifier;
@@ -94,7 +99,16 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	    collectAllResult += "\n";
 	    collectAllResult += (new XmppTest()).test();
 	    collectAllResult += "\n";
-
+	    collectAllResult += (new QuartzTest()).test();
+	    collectAllResult += "\n";
+	    collectAllResult += (new SqlTest()).test();
+	    collectAllResult += "\n";
+        collectAllResult += (new ServletlistenerTest()).test();
+        collectAllResult += "\n"; 
+        collectAllResult += (new StringtemplateTest()).test();
+        collectAllResult += "\n"; 
+        collectAllResult += (new WebsocketTest()).test();
+        collectAllResult += "\n"; 
 		return collectAllResult;
 
 	}
@@ -195,19 +209,19 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public String testquartz() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+        return (new QuartzTest()).test();
 	}
 
 	@Override
 	public String testservletlistener() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+        return (new ServletlistenerTest()).test();
 	}
 
 	@Override
 	public String testsql() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+        return (new SqlTest()).test();
 	}
 
 	@Override
@@ -219,7 +233,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public String teststringtemplate() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+        return (new StringtemplateTest()).test();
 	}
 
 	@Override
@@ -231,7 +245,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public String testwebsocket() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+        return (new WebsocketTest()).test();
 	}
 
 	@Override
