@@ -22,7 +22,7 @@ public class CamelCoreTestButton extends Button {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				greetingService.testahc(new AsyncCallback<String>() {
+				greetingService.testcamelcore(new AsyncCallback<String>() {
 
 					@Override
 					public void onSuccess(String result) {

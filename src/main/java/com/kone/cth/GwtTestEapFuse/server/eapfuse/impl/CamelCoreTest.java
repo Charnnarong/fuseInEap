@@ -20,9 +20,7 @@ public class CamelCoreTest implements EapFuseComponentTest {
 	@Override
 	public String test() {
 
-		
-
-	
+			
 		String result = CamelCoreTest.class.getName();
 
 		try{
