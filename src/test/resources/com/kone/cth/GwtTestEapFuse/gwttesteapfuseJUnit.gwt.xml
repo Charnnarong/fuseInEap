@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="gwttesteapfuse">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.kone.cth.GwtTestEapFuse.gwttesteapfuse' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/gwttesteapfuse/greet" class="com.kone.cth.GwtTestEapFuse.server.GreetingServiceImpl" />
+
+</module>
