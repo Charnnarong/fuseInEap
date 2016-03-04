@@ -15,7 +15,8 @@ public class ServletlistenerTest implements EapFuseComponentTest {
 		try {
 			CamelContext context = new DefaultCamelContext();
 			
-			context.addComponent("servletlistener", (Component) new  SimpleCamelServletContextListener());
+			//context.addComponent("servletlistener", (Component) new  SimpleCamelServletContextListener());
+			SimpleCamelServletContextListener simpleCamelServletContextListener = new SimpleCamelServletContextListener();
 			result += " : Passed";
 		} catch (Exception e) {
 			result += " : " + e.getMessage();
