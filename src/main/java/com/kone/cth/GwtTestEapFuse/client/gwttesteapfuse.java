@@ -36,6 +36,7 @@ import com.kone.cth.GwtTestEapFuse.client.testbuttons.ServletlistenerTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.SqlTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.SshTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.StringtemplateTestButton;
+import com.kone.cth.GwtTestEapFuse.client.testbuttons.TestAllCamelComponents;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.UrlrewriteTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.WebsocketTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.XmlrpcTestButton;
@@ -95,6 +96,7 @@ public class gwttesteapfuse implements EntryPoint {
 				"This war file is NOT packed with all camel libralies. If there were passed then Fuse on Eap should be good to go.");
 		Button testCamelAll = new Button("Test Camel Components");
 		buttonsLeft.add(testCamelAll);
+
 		testCamelAll.addClickHandler(new ClickHandler() {
 
 			@Override
@@ -113,6 +115,7 @@ public class gwttesteapfuse implements EntryPoint {
 						textAreaLeft.setText(orgText + "\ntestCamelJetty : " + caught.getMessage());
 
 					}
+
 				});
 
 			}
@@ -161,7 +164,7 @@ public class gwttesteapfuse implements EntryPoint {
 		resultPanel.setCellWidth(textAreaRight, "50%");
 
 		verticalPanel.add(testLabel);
-		
+
 		verticalPanel.add(resultPanel);
 		RootPanel.get().add(verticalPanel);
 
