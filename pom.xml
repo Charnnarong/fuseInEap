@@ -165,7 +165,60 @@
 			<version>${camel-version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+                <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-quartz</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-servletlistener</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                  <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-sql</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                   <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-ssh</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                     <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-stringtemplate</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                       <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-urlrewrite</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                             <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-websocket</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                             <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-xmlrpc</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
+                             <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-xmpp</artifactId>
+            <version>${camel-version}</version>
+            <scope>provided</scope>
+        </dependency>
 
 
 

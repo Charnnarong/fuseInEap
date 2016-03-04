@@ -13,6 +13,8 @@ import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.EjbTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.FreemarkerTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.JettyTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.NettyTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.SshTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.XmlrpcTest;
 import com.kone.cth.GwtTestEapFuse.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -204,7 +206,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public String testssh() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+	    return (new SshTest()).test();
 	}
 
 	@Override
@@ -228,7 +230,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public String testxmlrpc() {
 		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+	    return (new XmlrpcTest()).test();
 	}
 
 	@Override
