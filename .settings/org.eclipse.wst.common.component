@@ -5,7 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/gwt"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="GwtTestEapFuse"/>
         <property name="java-output-path" value="/GwtTestEapFuse/target/GwtTestEapFuse-0.0.1-SNAPSHOT/WEB-INF/classes"/>
+        <property name="context-root" value="GwtTestFuseOnEap"/>
     </wb-module>
 </project-modules>

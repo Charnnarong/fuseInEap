@@ -208,31 +208,26 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public String testquartz() {
-		// TODO Auto-generated method stub
         return (new QuartzTest()).test();
 	}
 
 	@Override
 	public String testservletlistener() {
-		// TODO Auto-generated method stub
         return (new ServletlistenerTest()).test();
 	}
 
 	@Override
 	public String testsql() {
-		// TODO Auto-generated method stub
         return (new SqlTest()).test();
 	}
 
 	@Override
 	public String testssh() {
-		// TODO Auto-generated method stub
 	    return (new SshTest()).test();
 	}
 
 	@Override
 	public String teststringtemplate() {
-		// TODO Auto-generated method stub
         return (new StringtemplateTest()).test();
 	}
 
@@ -244,19 +239,16 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public String testwebsocket() {
-		// TODO Auto-generated method stub
         return (new WebsocketTest()).test();
 	}
 
 	@Override
 	public String testxmlrpc() {
-		// TODO Auto-generated method stub
 	    return (new XmlrpcTest()).test();
 	}
 
 	@Override
 	public String testxmpp() {
-		// TODO Auto-generated method stub
         return (new XmppTest()).test();
 	}
 
