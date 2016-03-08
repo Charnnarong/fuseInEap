@@ -22,7 +22,7 @@ public class PrinterButton extends Button {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				greetingService.testnettyhttp(new AsyncCallback<String>() {
+				greetingService.testprinter(new AsyncCallback<String>() {
 
 					@Override
 					public void onSuccess(String result) {

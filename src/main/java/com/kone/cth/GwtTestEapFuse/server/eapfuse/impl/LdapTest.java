@@ -1,19 +1,19 @@
 package com.kone.cth.GwtTestEapFuse.server.eapfuse.impl;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.component.netty.NettyComponent;
+import org.apache.camel.component.ldap.LdapComponent;
 import org.apache.camel.impl.DefaultCamelContext;
 
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.EapFuseComponentTest;
 
-public class NettyTest implements EapFuseComponentTest {
-
+public class LdapTest implements EapFuseComponentTest {
+	
 	@Override
 	public String test() {
-		String result = NettyTest.class.getName();
+		String result = LdapTest.class.getName();
 		try {
 			CamelContext context = new DefaultCamelContext();
-			context.addComponent("netty", new NettyComponent());
+			context.addComponent("ldap", new LdapComponent());
 			result += " : Passed";
 		} catch (Exception e) {
 			result += " : " + e.getMessage();
@@ -21,5 +21,4 @@ public class NettyTest implements EapFuseComponentTest {
 
 		return result;
 	}
-
 }

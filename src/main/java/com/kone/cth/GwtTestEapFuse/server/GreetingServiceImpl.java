@@ -11,8 +11,16 @@ import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.CamelCoreTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.ContextTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.EjbTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.FreemarkerTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.JdbcTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.JettyTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.JpaTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.Jt400Test;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.LdapTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.MongoDbTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.NettyHttpTest;
 import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.NettyTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.PrinterTest;
+import com.kone.cth.GwtTestEapFuse.server.eapfuse.impl.UrlRewriteTest;
 import com.kone.cth.GwtTestEapFuse.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -132,8 +140,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public String testjdbc() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new JdbcTest()).test();
 	}
 
 	@Override
@@ -143,44 +150,37 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public String testjpa() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new JpaTest()).test();
 	}
 
 	@Override
 	public String testjt400() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new Jt400Test()).test();
 	}
 
 	@Override
 	public String testldap() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new LdapTest().test());
 	}
 
 	@Override
 	public String testmongodb() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new MongoDbTest()).test();
 	}
 
 	@Override
 	public String testnetty() {
-
 		return (new NettyTest()).test();
 	}
 
 	@Override
 	public String testnettyhttp() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new NettyHttpTest()).test();
 	}
 
 	@Override
 	public String testprinter() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new PrinterTest()).test();
 	}
 
 	@Override
@@ -215,8 +215,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public String testurlrewrite() {
-		// TODO Auto-generated method stub
-		return "Not yet Implemented the test.";
+		return (new UrlRewriteTest()).test();
 	}
 
 	@Override
