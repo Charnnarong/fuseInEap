@@ -31,6 +31,7 @@ public class CamelCoreTestButton extends Button {
 						lbl.getElement().getStyle().setFontSize(14, Unit.PX);
 						lbl.getElement().getStyle().setColor("00ffaa");
 						textAreaRight.add(lbl);
+						CamelCoreTestButton.this.getElement().getStyle().setProperty("background", "lightgreen");
 
 					}
 
@@ -41,6 +42,7 @@ public class CamelCoreTestButton extends Button {
 						lbl.getElement().getStyle().setFontSize(14, Unit.PX);
 						lbl.getElement().getStyle().setColor("ff00aa");
 						textAreaRight.add(lbl);
+						CamelCoreTestButton.this.getElement().getStyle().setProperty("background", "pink");
 
 					}
 				});

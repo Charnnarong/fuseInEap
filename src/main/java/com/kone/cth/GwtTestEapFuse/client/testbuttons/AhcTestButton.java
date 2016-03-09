@@ -31,6 +31,7 @@ public class AhcTestButton extends Button {
 						lbl.getElement().getStyle().setFontSize(14, Unit.PX);
 						lbl.getElement().getStyle().setColor("00ffaa");
 						textAreaRight.add(lbl);
+						AhcTestButton.this.getElement().getStyle().setProperty("background", "lightgreen");
 
 					}
 
@@ -41,7 +42,7 @@ public class AhcTestButton extends Button {
 						lbl.getElement().getStyle().setFontSize(14, Unit.PX);
 						lbl.getElement().getStyle().setColor("ff00aa");
 						textAreaRight.add(lbl);
-
+						AhcTestButton.this.getElement().getStyle().setProperty("background", "pink");
 					}
 				});
 

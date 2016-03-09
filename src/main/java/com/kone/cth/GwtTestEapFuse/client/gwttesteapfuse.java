@@ -2,8 +2,10 @@ package com.kone.cth.GwtTestEapFuse.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -36,6 +38,7 @@ import com.kone.cth.GwtTestEapFuse.client.testbuttons.ServletlistenerTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.SqlTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.SshTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.StringtemplateTestButton;
+import com.kone.cth.GwtTestEapFuse.client.testbuttons.TestAllCamelComponents;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.UrlrewriteTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.WebsocketTestButton;
 import com.kone.cth.GwtTestEapFuse.client.testbuttons.XmlrpcTestButton;
@@ -65,21 +68,18 @@ public class gwttesteapfuse implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		VerticalPanel verticalPanel = new VerticalPanel();
-		final TextArea textAreaLeft = new TextArea();
+		final VerticalPanel textAreaLeft = new VerticalPanel();
 		final FlowPanel textAreaRight = new FlowPanel();
 		HorizontalPanel buttonPanel = new HorizontalPanel();
 		SimplePanel buttonsLeft = new SimplePanel();
 		FlowPanel buttonsRight = new FlowPanel();
 
+		RootPanel.get().getElement().getStyle().setMargin(10, Unit.PX);
+		RootPanel.get().add(verticalPanel);
+
 		verticalPanel.setWidth("100%");
 		verticalPanel.setHeight("100%");
 		buttonPanel.setWidth("100%");
-
-		textAreaLeft.setWidth("100%");
-		textAreaLeft.setHeight("100%");
-
-		textAreaRight.setWidth("100%");
-		textAreaRight.setHeight("100%");
 
 		textAreaRight.getElement().getStyle().setProperty("margin", "10px");
 
@@ -91,32 +91,26 @@ public class gwttesteapfuse implements EntryPoint {
 		buttonPanel.setCellWidth(buttonsLeft, "50%");
 		buttonPanel.setCellWidth(buttonsRight, "50%");
 
-		Label testLabel = new Label(
-				"This war file is NOT packed with all camel libralies. If there were passed then Fuse on Eap should be good to go.");
+		buttonsRight.getElement().getStyle().setMarginLeft(10, Unit.PX);
+
+		textAreaRight.getElement().getStyle().setPadding(10, Unit.PX);
+
+		Label testLabel = new Label("Thes all components listed on the right.");
 		Button testCamelAll = new Button("Test Camel Components");
 		buttonsLeft.add(testCamelAll);
-		testCamelAll.addClickHandler(new ClickHandler() {
+
+		testCamelAll.addClickHandler(new TestAllCamelComponents(greetingService, textAreaLeft));
+
+		Button clearLog = new Button("CLEAR LOG");
+		clearLog.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				greetingService.testCamelComponents(new AsyncCallback<String>() {
-
-					@Override
-					public void onSuccess(String result) {
-						String orgText = textAreaLeft.getText();
-						textAreaLeft.setText(orgText + "\ntestCamelJetty : " + result);
-					}
-
-					@Override
-					public void onFailure(Throwable caught) {
-						String orgText = textAreaLeft.getText();
-						textAreaLeft.setText(orgText + "\ntestCamelJetty : " + caught.getMessage());
-
-					}
-				});
-
+				textAreaRight.clear();
 			}
 		});
+		clearLog.getElement().getStyle().setProperty("background", "none");
+		clearLog.getElement().getStyle().setProperty("border", "1px solid blue");
 
 		buttonsRight.add(new CamelCoreTestButton("core", textAreaRight, greetingService));
 		buttonsRight.add(new AhcTestButton("ahc", textAreaRight, greetingService));
@@ -145,25 +139,24 @@ public class gwttesteapfuse implements EntryPoint {
 		buttonsRight.add(new WebsocketTestButton("websocket", textAreaRight, greetingService));
 		buttonsRight.add(new XmlrpcTestButton("xmlrpc", textAreaRight, greetingService));
 		buttonsRight.add(new XmppTestButton("xmpp", textAreaRight, greetingService));
-
-		// 1. crate buttoon
-		// 2.
+		buttonsRight.add(clearLog);
 
 		HorizontalPanel resultPanel = new HorizontalPanel();
+		verticalPanel.add(testLabel);
+		verticalPanel.add(resultPanel);
 
 		resultPanel.setWidth("100%");
 		resultPanel.setHeight("100%");
 		resultPanel.add(textAreaLeft);
+		textAreaLeft.setWidth("100%");
+		textAreaLeft.setHeight("100%");
 		resultPanel.add(textAreaRight);
+		textAreaRight.setWidth("100%");
+		textAreaRight.setHeight("100%");
 		resultPanel.setCellHeight(textAreaLeft, "100%");
 		resultPanel.setCellHeight(textAreaRight, "100%");
-		resultPanel.setCellWidth(textAreaLeft, "50%");
-		resultPanel.setCellWidth(textAreaRight, "50%");
-
-		verticalPanel.add(testLabel);
-		
-		verticalPanel.add(resultPanel);
-		RootPanel.get().add(verticalPanel);
+		resultPanel.setCellWidth(textAreaLeft, "49%");
+		resultPanel.setCellWidth(textAreaRight, "49%");
 
 	}
 }
